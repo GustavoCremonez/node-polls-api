@@ -3,7 +3,7 @@ import z from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function getPoll(app: FastifyInstance) {
-  app.post("/polls/:pollId", async (request, reply) => {
+  app.get("/polls/:pollId", async (request, reply) => {
     const getPollParams = z.object({
       pollId: z.string().uuid(),
     });
